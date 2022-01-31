@@ -48,7 +48,7 @@ namespace CPTS321_PROJECT.Src
         }
 
 
-
+        // https://www.dofactory.com/net/observer-design-pattern
         //private List<Observer> observers = new List<Observer>();
         //public void Attach(Observer observer)
         //{
