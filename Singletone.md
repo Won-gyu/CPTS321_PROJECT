@@ -1,0 +1,3 @@
+Singleton over static class
+
+The Singleton pattern has several advantages over static classes. First, a singleton can extend classes and implement interfaces, while a static class cannot (it can extend classes, but it does not inherit their instance members). A singleton can be initialized lazily or asynchronously while a static class is generally initialized when it is first loaded, leading to potential class loader issues. However the most important advantage, though, is that singletons can be handled polymorphically without forcing their users to assume that there is only one instance.

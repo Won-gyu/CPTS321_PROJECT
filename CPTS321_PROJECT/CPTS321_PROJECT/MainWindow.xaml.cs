@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CPTS321_PROJECT.Src;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace CPTS321_PROJECT
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ButtonDo_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Piano.Instance.
         }
     }
 }
