@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CPTS321_PROJECT.Src
 {
-    public abstract class PianoObserver
+    public interface IPianoObserver
     {
-        public abstract void NotifyPianoPlayed(Piano.Scale scale);
+        void NotifyPianoPlayed(Piano.Scale scale);
     }
 }
