@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace CPTS321_PROJECT.Src
 {
-    public class PianoSoundManager : IPianoObserver
+    public class PianoSoundManager : SingletonBase<PianoSoundManager>, IPianoObserver
     {
         PianoSoundPool pool;
 
-        private PianoSoundManager()
+        public PianoSoundManager()
         {
             pool = new PianoSoundPool();
         }
