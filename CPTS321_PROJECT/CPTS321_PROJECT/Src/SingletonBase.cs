@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace CPTS321_PROJECT.Src
 {
-    public class SingletonBase<T>
+    public class SingletonBase<T> where T : class, new()
     {
-        private static SingletonBase<T> instance = null;
+        private static T instance = null;
         private static readonly object padlock = new object();
 
         public SingletonBase()
         {
         }
 
-        public static SingletonBase<T> Instance
+        public static T Instance
         {
             get
             {
@@ -23,7 +23,7 @@ namespace CPTS321_PROJECT.Src
                 {
                     if (instance == null)
                     {
-                        instance = new SingletonBase<T>();
+                        instance = new T();
                     }
                     return instance;
                 }
