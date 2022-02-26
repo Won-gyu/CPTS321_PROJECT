@@ -36,5 +36,10 @@ namespace CPTS321_PROJECT
         {
             Piano.Instance.Play(Piano.Scale.Do);
         }
+
+        private void ButtonRe_Click(object sender, RoutedEventArgs e)
+        {
+            Piano.Instance.Play(Piano.Scale.Re);
+        }
     }
 }
