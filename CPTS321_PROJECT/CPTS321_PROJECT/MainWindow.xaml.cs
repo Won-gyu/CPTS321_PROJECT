@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,11 +25,16 @@ namespace CPTS321_PROJECT
         public MainWindow()
         {
             InitializeComponent();
+            Piano.Instance.Attach(PianoSoundManager.Instance);
         }
 
         private void ButtonDo_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Piano.Instance.
+        }
+
+        private void ButtonDo_Click(object sender, RoutedEventArgs e)
+        {
+            Piano.Instance.Play(Piano.Scale.Do);
         }
     }
 }

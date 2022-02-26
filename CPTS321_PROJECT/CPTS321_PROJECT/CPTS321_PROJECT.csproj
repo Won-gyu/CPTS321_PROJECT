@@ -56,6 +56,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Src\Piano.cs" />
+    <Compile Include="Src\PianoObservers\IPianoObserver.cs" />
+    <Compile Include="Src\PianoObservers\PianoSoundManager.cs" />
+    <Compile Include="Src\PianoSoundPool.cs" />
+    <Compile Include="Src\PooledSoundPlayer.cs" />
+    <Compile Include="Src\SingletonBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
