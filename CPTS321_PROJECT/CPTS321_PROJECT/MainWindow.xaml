@@ -5,10 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPTS321_PROJECT"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="248" Width="460">
     <Grid>
-        <Button x:Name="ButtonDo" Content="Do" HorizontalAlignment="Left" Margin="29,226,0,0" VerticalAlignment="Top" Width="44" Height="159" Click="ButtonDo_Click"/>
-        <Button x:Name="ButtonRe" Content="Re" HorizontalAlignment="Left" Margin="89,226,0,0" VerticalAlignment="Top" Width="44" Height="159" Click="ButtonRe_Click"/>
+        <Button x:Name="ButtonDo" Content="Do" HorizontalAlignment="Left" Margin="54,32,0,0" VerticalAlignment="Top" Width="44" Height="159" Click="ButtonDo_Click"/>
+        <Button x:Name="ButtonRe" Content="Re" HorizontalAlignment="Left" Margin="103,32,0,0" VerticalAlignment="Top" Width="44" Height="159" Click="ButtonRe_Click"/>
+        <Button x:Name="ButtonMi" Content="Mi" HorizontalAlignment="Left" Margin="152,32,0,0" VerticalAlignment="Top" Width="44" Height="159" Click="ButtonMi_Click"/>
+        <Button x:Name="ButtonFa" Content="Fa" HorizontalAlignment="Left" Margin="201,32,0,0" VerticalAlignment="Top" Width="44" Height="159" Click="ButtonFa_Click"/>
+        <Button x:Name="ButtonSol" Content="Sol" HorizontalAlignment="Left" Margin="250,32,0,0" VerticalAlignment="Top" Width="44" Height="159" Click="ButtonSol_Click"/>
+        <Button x:Name="ButtonLa" Content="La" HorizontalAlignment="Left" Margin="299,32,0,0" VerticalAlignment="Top" Width="44" Height="159" Click="ButtonLa_Click"/>
+        <Button x:Name="ButtonSi" Content="Si" HorizontalAlignment="Left" Margin="348,32,0,0" VerticalAlignment="Top" Width="44" Height="159" Click="ButtonSi_Click"/>
 
     </Grid>
 </Window>
