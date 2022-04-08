@@ -16,7 +16,7 @@ namespace CPTS321_PROJECT.Src
             pool = new PianoSoundPool();
         }
 
-        public void NotifyPianoPlayed(Piano.Scale scale)
+        public void OnScalePlayed(Piano.Scale scale)
         {
             pool.PlayScale(scale);
         }

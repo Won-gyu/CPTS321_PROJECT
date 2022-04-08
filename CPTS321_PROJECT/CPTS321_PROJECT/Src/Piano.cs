@@ -25,10 +25,9 @@ namespace CPTS321_PROJECT.Src
 
         public void Play(Scale scale)
         {
-            NotifyPianoPlayed(scale);
+            NotifyScalePlayed(scale);
         }
 
-        // https://www.dofactory.com/net/observer-design-pattern
         private List<IPianoObserver> observers = new List<IPianoObserver>();
         public void Attach(IPianoObserver observer)
         {
@@ -38,11 +37,11 @@ namespace CPTS321_PROJECT.Src
         {
             observers.Remove(observer);
         }
-        private void NotifyPianoPlayed(Scale scale)
+        private void NotifyScalePlayed(Scale scale)
         {
             foreach (IPianoObserver o in observers)
             {
-                o.NotifyPianoPlayed(scale);
+                o.OnScalePlayed(scale);
             }
         }
     }

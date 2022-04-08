@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPTS321_PROJECT.Src
 {
-    public class SingletonBase<T> where T : class, new()
+    public abstract class SingletonBase<T> where T : class, new()
     {
         private static T instance = null;
         private static readonly object padlock = new object();

@@ -8,6 +8,6 @@ namespace CPTS321_PROJECT.Src
 {
     public interface IPianoObserver
     {
-        void NotifyPianoPlayed(Piano.Scale scale);
+        void OnScalePlayed(Piano.Scale scale);
     }
 }

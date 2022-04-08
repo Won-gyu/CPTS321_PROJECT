@@ -28,10 +28,6 @@ namespace CPTS321_PROJECT
             Piano.Instance.Attach(PianoSoundManager.Instance);
         }
 
-        private void ButtonDo_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-        }
-
         private void ButtonDo_Click(object sender, RoutedEventArgs e)
         {
             Piano.Instance.Play(Piano.Scale.Do);
