@@ -43,23 +43,10 @@ namespace CPTS321_PROJECT
             Piano.Instance.Play(Piano.Scale.Mi);
         }
 
-        private void ButtonFa_Click(object sender, RoutedEventArgs e)
+        private void ButtonOpenSubform_Click(object sender, RoutedEventArgs e)
         {
-            Piano.Instance.Play(Piano.Scale.Fa);
-        }
-
-        private void ButtonSol_Click(object sender, RoutedEventArgs e)
-        {
-            Piano.Instance.Play(Piano.Scale.Sol);
-        }
-
-        private void ButtonLa_Click(object sender, RoutedEventArgs e)
-        {
-            Piano.Instance.Play(Piano.Scale.La);
-        }
-        private void ButtonSi_Click(object sender, RoutedEventArgs e)
-        {
-            Piano.Instance.Play(Piano.Scale.Si);
+            Subform subform = new Subform();
+            subform.Show();
         }
     }
 }

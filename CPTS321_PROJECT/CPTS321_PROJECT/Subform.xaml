@@ -1,0 +1,16 @@
+﻿<Window x:Class="CPTS321_PROJECT.Subform"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPTS321_PROJECT"
+        mc:Ignorable="d"
+        Title="Subform" Height="250" Width="289">
+    <Grid>
+        <Button x:Name="ButtonFa" Content="Fa" HorizontalAlignment="Left" Margin="41,33,0,0" VerticalAlignment="Top" Width="44" Height="159" Click="ButtonFa_Click"/>
+        <Button x:Name="ButtonSol" Content="Sol" HorizontalAlignment="Left" Margin="90,33,0,0" VerticalAlignment="Top" Width="44" Height="159" Click="ButtonSol_Click"/>
+        <Button x:Name="ButtonLa" Content="La" HorizontalAlignment="Left" Margin="139,33,0,0" VerticalAlignment="Top" Width="44" Height="159" Click="ButtonLa_Click"/>
+        <Button x:Name="ButtonSi" Content="Si" HorizontalAlignment="Left" Margin="188,33,0,0" VerticalAlignment="Top" Width="44" Height="159" Click="ButtonSi_Click"/>
+
+    </Grid>
+</Window>
