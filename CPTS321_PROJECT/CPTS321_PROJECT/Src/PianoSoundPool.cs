@@ -9,7 +9,7 @@ namespace CPTS321_PROJECT.Src
 {
     public class PianoSoundPool
     {
-        List<List<PooledSoundPlayer>> soundPlayerPool;
+        List<List<PooledSoundPlayer>> soundPlayers;
 
         private static List<string> soundNames = new List<string>()
         {
@@ -24,12 +24,12 @@ namespace CPTS321_PROJECT.Src
 
         public PianoSoundPool(int initialPlayerCount = 1)
         {
-            soundPlayerPool = new List<List<PooledSoundPlayer>>();
+            soundPlayers = new List<List<PooledSoundPlayer>>();
 
             int scaleCount = Enum.GetNames(typeof(Piano.Scale)).Length;
             for (int i = 0; i < scaleCount; i++)
             {
-                soundPlayerPool.Add(new List<PooledSoundPlayer>());
+                soundPlayers.Add(new List<PooledSoundPlayer>());
 
                 for (int j = 0; j < initialPlayerCount; j++)
                 {
@@ -38,19 +38,9 @@ namespace CPTS321_PROJECT.Src
             }
         }
 
-        public void PlayScale(Piano.Scale scale)
+        public PooledSoundPlayer GetAvailablePlayer(Piano.Scale scale)
         {
-            PooledSoundPlayer player = GetAvailablePlayer(scale);
-            if (player == null)
-            {
-                player = AddPooledObject(scale);
-            }
-            player.Play();
-        }
-
-        private PooledSoundPlayer GetAvailablePlayer(Piano.Scale scale)
-        {
-            List<PooledSoundPlayer> players = soundPlayerPool[(int)scale];
+            List<PooledSoundPlayer> players = soundPlayers[(int)scale];
             for (int i = 0; i < players.Count; i++)
             {
                 if (players[i].IsAvailable)
@@ -58,13 +48,13 @@ namespace CPTS321_PROJECT.Src
                     return players[i];
                 }
             }
-            return null;
+            return AddPooledObject(scale);
         }
 
         private PooledSoundPlayer AddPooledObject(Piano.Scale scale)
         {
             PooledSoundPlayer player = new PooledSoundPlayer(System.AppDomain.CurrentDomain.BaseDirectory + "Sound/" + soundNames[(int)scale], 1f);
-            soundPlayerPool[(int)scale].Add(player);
+            soundPlayers[(int)scale].Add(player);
             return player;
         }
     }

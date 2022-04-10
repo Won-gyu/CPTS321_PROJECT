@@ -18,7 +18,7 @@ namespace CPTS321_PROJECT.Src
 
         public void OnScalePlayed(Piano.Scale scale)
         {
-            pool.PlayScale(scale);
+            pool.GetAvailablePlayer(scale).Play();
         }
     }
 }
