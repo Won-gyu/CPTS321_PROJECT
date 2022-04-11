@@ -10,22 +10,33 @@ namespace CPTS321_PROJECT.Src
 {
     public class PooledSoundPlayer
     {
+        private static List<string> soundNames = new List<string>()
+        {
+            "do.wav",
+            "re.wav",
+            "mi.wav",
+            "fa.wav",
+            "sol.wav",
+            "la.wav",
+            "si.wav"
+        };
+
+        private Piano.Scale scale;
+        private PianoSoundPool pool;
         private MediaPlayer soundPlayer;
         private float lifespan;
-        private bool isAvailable;
-        public bool IsAvailable
+
+        public Piano.Scale Scale
         {
-            get
-            {
-                return isAvailable;
-            }
+            get { return scale; }
         }
 
-        public PooledSoundPlayer(string path, float lifespan)
+        public PooledSoundPlayer(PianoSoundPool pool, Piano.Scale scale, float lifespan)
         {
-            this.isAvailable = true;
+            this.pool = pool;
+            this.scale = scale;
             this.soundPlayer = new MediaPlayer();
-            this.soundPlayer.Open(new Uri(path));
+            this.soundPlayer.Open(new Uri(System.AppDomain.CurrentDomain.BaseDirectory + "Sound/" + soundNames[(int)scale]));
             this.lifespan = lifespan;
         }
 
@@ -34,10 +45,9 @@ namespace CPTS321_PROJECT.Src
             soundPlayer.Stop();
             soundPlayer.Position = TimeSpan.Zero;
             soundPlayer.Play();
-            isAvailable = false;
             Task.Delay((int)(lifespan * 1000)).ContinueWith(t =>
             {
-                isAvailable = true;
+                pool.ReturnToPool(this);
             });
         }
     }
