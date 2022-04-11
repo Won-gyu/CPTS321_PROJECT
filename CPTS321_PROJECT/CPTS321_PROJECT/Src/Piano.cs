@@ -8,6 +8,8 @@ namespace CPTS321_PROJECT.Src
 {
     public class Piano : SingletonBase<Piano>
     {
+        private PianoSoundManager pianoSoundManager;
+
         public enum Scale
         {
             Do,
@@ -21,28 +23,12 @@ namespace CPTS321_PROJECT.Src
 
         public Piano()
         {
+            pianoSoundManager = new PianoSoundManager();
         }
 
         public void Play(Scale scale)
         {
-            NotifyScalePlayed(scale);
-        }
-
-        private List<IPianoObserver> observers = new List<IPianoObserver>();
-        public void Attach(IPianoObserver observer)
-        {
-            observers.Add(observer);
-        }
-        public void Detach(IPianoObserver observer)
-        {
-            observers.Remove(observer);
-        }
-        private void NotifyScalePlayed(Scale scale)
-        {
-            foreach (IPianoObserver o in observers)
-            {
-                o.OnScalePlayed(scale);
-            }
+            PianoDispatcher.Instance.DispatchEventScalePlayed(scale);
         }
     }
 }

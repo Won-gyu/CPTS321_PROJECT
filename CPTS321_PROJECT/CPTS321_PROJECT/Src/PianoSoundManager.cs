@@ -7,16 +7,23 @@ using System.Threading.Tasks;
 
 namespace CPTS321_PROJECT.Src
 {
-    public class PianoSoundManager : SingletonBase<PianoSoundManager>, IPianoObserver
+    public class PianoSoundManager
     {
         PianoSoundPool pool;
 
         public PianoSoundManager()
         {
+            PianoDispatcher.Instance.OnScalePlayed += OnScalePlayed;
+
             pool = new PianoSoundPool();
         }
 
-        public void OnScalePlayed(Piano.Scale scale)
+        ~PianoSoundManager()
+        {
+            PianoDispatcher.Instance.OnScalePlayed -= OnScalePlayed;
+        }
+
+        private void OnScalePlayed(Piano.Scale scale)
         {
             pool.GetAvailablePlayer(scale).Play();
         }

@@ -56,8 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Src\Piano.cs" />
-    <Compile Include="Src\PianoObservers\IPianoObserver.cs" />
-    <Compile Include="Src\PianoObservers\PianoSoundManager.cs" />
+    <Compile Include="Src\PianoDispatcher.cs" />
+    <Compile Include="Src\PianoSoundManager.cs" />
     <Compile Include="Src\PianoSoundPool.cs" />
     <Compile Include="Src\PooledSoundPlayer.cs" />
     <Compile Include="Src\SingletonBase.cs" />

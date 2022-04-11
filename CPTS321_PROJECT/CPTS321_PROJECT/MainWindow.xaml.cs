@@ -25,7 +25,6 @@ namespace CPTS321_PROJECT
         public MainWindow()
         {
             InitializeComponent();
-            Piano.Instance.Attach(PianoSoundManager.Instance);
         }
 
         private void ButtonDo_Click(object sender, RoutedEventArgs e)
