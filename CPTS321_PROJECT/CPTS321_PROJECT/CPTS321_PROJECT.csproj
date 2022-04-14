@@ -55,10 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Src\Piano.cs" />
-    <Compile Include="Src\PianoDispatcher.cs" />
-    <Compile Include="Src\PianoSoundManager.cs" />
-    <Compile Include="Src\PianoSoundPool.cs" />
+    <Compile Include="Src\MyApp.cs" />
+    <Compile Include="Src\ScaleSoundPool.cs" />
     <Compile Include="Src\PooledSoundPlayer.cs" />
     <Compile Include="Src\SingletonBase.cs" />
     <Compile Include="Subform.xaml.cs">

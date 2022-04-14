@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CPTS321_PROJECT.Src
+namespace CPTS321_PROJECT
 {
     public abstract class SingletonBase<T> where T : class, new()
     {

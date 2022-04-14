@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CPTS321_PROJECT.Src
+namespace CPTS321_PROJECT
 {
-    public class Piano : SingletonBase<Piano>
+    public class MyApp : SingletonBase<MyApp>
     {
-        private PianoSoundManager pianoSoundManager;
+        ScaleSoundPool pool;
 
         public enum Scale
         {
@@ -21,14 +21,14 @@ namespace CPTS321_PROJECT.Src
             Si
         }
 
-        public Piano()
+        public MyApp()
         {
-            pianoSoundManager = new PianoSoundManager();
+            pool = new ScaleSoundPool();
         }
 
         public void Play(Scale scale)
         {
-            PianoDispatcher.Instance.DispatchEventScalePlayed(scale);
+            pool.GetAvailablePlayer(scale).Play();
         }
     }
 }

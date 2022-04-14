@@ -1,5 +1,4 @@
-﻿using CPTS321_PROJECT.Src;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Media;
@@ -29,17 +28,17 @@ namespace CPTS321_PROJECT
 
         private void ButtonDo_Click(object sender, RoutedEventArgs e)
         {
-            Piano.Instance.Play(Piano.Scale.Do);
+            MyApp.Instance.Play(MyApp.Scale.Do);
         }
 
         private void ButtonRe_Click(object sender, RoutedEventArgs e)
         {
-            Piano.Instance.Play(Piano.Scale.Re);
+            MyApp.Instance.Play(MyApp.Scale.Re);
         }
 
         private void ButtonMi_Click(object sender, RoutedEventArgs e)
         {
-            Piano.Instance.Play(Piano.Scale.Mi);
+            MyApp.Instance.Play(MyApp.Scale.Mi);
         }
 
         private void ButtonOpenSubform_Click(object sender, RoutedEventArgs e)

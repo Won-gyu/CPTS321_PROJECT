@@ -5,29 +5,29 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CPTS321_PROJECT.Src
+namespace CPTS321_PROJECT
 {
-    public class PianoSoundPool
+    public class ScaleSoundPool
     {
         List<Stack<PooledSoundPlayer>> soundPlayers;
 
-        public PianoSoundPool(int initialPlayerCount = 1)
+        public ScaleSoundPool(int initialPlayerCount = 1)
         {
             soundPlayers = new List<Stack<PooledSoundPlayer>>();
 
-            int scaleCount = Enum.GetNames(typeof(Piano.Scale)).Length;
+            int scaleCount = Enum.GetNames(typeof(MyApp.Scale)).Length;
             for (int i = 0; i < scaleCount; i++)
             {
                 soundPlayers.Add(new Stack<PooledSoundPlayer>());
 
                 for (int j = 0; j < initialPlayerCount; j++)
                 {
-                    AddPooledObject((Piano.Scale)i);
+                    AddPooledObject((MyApp.Scale)i);
                 }
             }
         }
 
-        public PooledSoundPlayer GetAvailablePlayer(Piano.Scale scale)
+        public PooledSoundPlayer GetAvailablePlayer(MyApp.Scale scale)
         {
             Stack<PooledSoundPlayer> players = soundPlayers[(int)scale];
             if (players.Count > 0)
@@ -46,7 +46,7 @@ namespace CPTS321_PROJECT.Src
             players.Push(player);
         }
 
-        private PooledSoundPlayer AddPooledObject(Piano.Scale scale)
+        private PooledSoundPlayer AddPooledObject(MyApp.Scale scale)
         {
             PooledSoundPlayer player = new PooledSoundPlayer(this, scale, 1f);
             soundPlayers[(int)scale].Push(player);

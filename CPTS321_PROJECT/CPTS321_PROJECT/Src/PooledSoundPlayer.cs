@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 
-namespace CPTS321_PROJECT.Src
+namespace CPTS321_PROJECT
 {
     public class PooledSoundPlayer
     {
@@ -21,17 +21,17 @@ namespace CPTS321_PROJECT.Src
             "si.wav"
         };
 
-        private Piano.Scale scale;
-        private PianoSoundPool pool;
+        private MyApp.Scale scale;
+        private ScaleSoundPool pool;
         private MediaPlayer soundPlayer;
         private float lifespan;
 
-        public Piano.Scale Scale
+        public MyApp.Scale Scale
         {
             get { return scale; }
         }
 
-        public PooledSoundPlayer(PianoSoundPool pool, Piano.Scale scale, float lifespan)
+        public PooledSoundPlayer(ScaleSoundPool pool, MyApp.Scale scale, float lifespan)
         {
             this.pool = pool;
             this.scale = scale;

@@ -1,5 +1,4 @@
-﻿using CPTS321_PROJECT.Src;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,21 +26,22 @@ namespace CPTS321_PROJECT
 
         private void ButtonFa_Click(object sender, RoutedEventArgs e)
         {
-            Piano.Instance.Play(Piano.Scale.Fa);
+            MyApp.Instance.Play(MyApp.Scale.Fa);
         }
 
         private void ButtonSol_Click(object sender, RoutedEventArgs e)
         {
-            Piano.Instance.Play(Piano.Scale.Sol);
+            MyApp.Instance.Play(MyApp.Scale.Sol);
         }
 
         private void ButtonLa_Click(object sender, RoutedEventArgs e)
         {
-            Piano.Instance.Play(Piano.Scale.La);
+            MyApp.Instance.Play(MyApp.Scale.La);
         }
+
         private void ButtonSi_Click(object sender, RoutedEventArgs e)
         {
-            Piano.Instance.Play(Piano.Scale.Si);
+            MyApp.Instance.Play(MyApp.Scale.Si);
         }
     }
 }
