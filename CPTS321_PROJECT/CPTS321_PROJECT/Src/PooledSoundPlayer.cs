@@ -23,7 +23,7 @@ namespace CPTS321_PROJECT
 
         private MyApp.Scale scale;
         private ScaleSoundPool pool;
-        private MediaPlayer soundPlayer;
+        private MediaPlayer mediaPlayer;
         private float lifespan;
 
         public MyApp.Scale Scale
@@ -35,16 +35,16 @@ namespace CPTS321_PROJECT
         {
             this.pool = pool;
             this.scale = scale;
-            this.soundPlayer = new MediaPlayer();
-            this.soundPlayer.Open(new Uri(System.AppDomain.CurrentDomain.BaseDirectory + "Sound/" + soundNames[(int)scale]));
+            this.mediaPlayer = new MediaPlayer();
+            this.mediaPlayer.Open(new Uri(System.AppDomain.CurrentDomain.BaseDirectory + "Sound/" + soundNames[(int)scale]));
             this.lifespan = lifespan;
         }
 
         public void Play()
         {
-            soundPlayer.Stop();
-            soundPlayer.Position = TimeSpan.Zero;
-            soundPlayer.Play();
+            mediaPlayer.Stop();
+            mediaPlayer.Position = TimeSpan.Zero;
+            mediaPlayer.Play();
             Task.Delay((int)(lifespan * 1000)).ContinueWith(t =>
             {
                 pool.ReturnToPool(this);
