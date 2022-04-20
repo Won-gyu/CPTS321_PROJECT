@@ -43,7 +43,7 @@ namespace CPTS321_PROJECT
         public void Play()
         {
             mediaPlayer.Stop();
-            mediaPlayer.Position = TimeSpan.Zero;
+             mediaPlayer.Position = TimeSpan.Zero;
             mediaPlayer.Play();
             Task.Delay((int)(lifespan * 1000)).ContinueWith(t =>
             {
